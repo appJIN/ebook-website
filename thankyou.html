@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ধন্যবাদ! আপনার ই-বুক ডাউনলোড হচ্ছে — JINBOOK</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📚</text></svg>" />
+</head>
+<body>
+
+  <!-- Background Animated Orbs -->
+  <div class="bg-particles" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <div class="thankyou-container">
+    <div class="thankyou-card">
+      <div class="thankyou-icon">✅</div>
+      <h1>পেমেন্ট সফল হয়েছে!</h1>
+      <p id="thankyou-message">আপনার ই-বুক অটো ডাউনলোড শুরু হচ্ছে...</p>
+
+      <!-- Progress Animation -->
+      <div id="download-progress" style="margin: 24px 0;">
+        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+          <div id="progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #7c5cfc, #00d4aa); border-radius: 3px; transition: width 2s ease-in-out;"></div>
+        </div>
+        <p id="download-status" style="margin-top: 12px; font-size: 0.85rem; color: rgba(240,240,248,0.5);">ডাউনলোড প্রস্তুত হচ্ছে...</p>
+      </div>
+
+      <!-- Manual Download Button (fallback) -->
+      <a href="#" id="manual-download" class="btn btn-buy" style="display: none; width: 100%; justify-content: center; margin-bottom: 16px;">
+        📥 আবার ডাউনলোড করুন
+      </a>
+
+      <!-- Book Info -->
+      <div id="book-info" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin-bottom: 24px; text-align: left; display: none;">
+        <div style="display: flex; gap: 16px; align-items: center;">
+          <img id="book-thumb" src="" alt="" style="width: 60px; border-radius: 8px;" />
+          <div>
+            <h3 id="book-title-display" style="font-size: 1rem; margin-bottom: 4px;"></h3>
+            <p id="book-author-display" style="font-size: 0.85rem; color: rgba(240,240,248,0.5);"></p>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html" class="btn btn-outline" style="width: 100%; justify-content: center;">
+        🏠 হোম পেজে ফিরে যান
+      </a>
+
+      <p style="margin-top: 20px; font-size: 0.8rem; color: rgba(240,240,248,0.3);">
+        ডাউনলোড না হলে উপরের বাটনে ক্লিক করুন অথবা আমাদের সাথে যোগাযোগ করুন।
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // 📚 BOOK DATA (must match script.js)
+    // পেমেন্ট সফল হলে ZiniPay এই পেজে রিডাইরেক্ট করবে
+    // URL: thankyou.html?book=1
+    // ============================================
+
+    const bookDownloads = {
+      1: { title: "ওজন কমাবেন যেভাবে", author: "ডা. মো. জহিরুল ইসলাম", cover: "images/book-ojon-komaben.png", file: "downloads/book1.pdf" },
+      2: { title: "ওজন বাড়াবেন যেভাবে", author: "ডা. মো. জহিরুল ইসলাম", cover: "images/book-ojon-baraben.png", file: "downloads/book2.pdf" },
+      3: { title: "সহজ বাংলায় স্ট্যাটিস্টিকস", author: "ডা. মো. জহিরুল ইসলাম", cover: "images/book-biostat.png", file: "downloads/book3.pdf" }
+    };
+
+    // Get book ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get('book');
+
+    const messageEl = document.getElementById('thankyou-message');
+    const progressBar = document.getElementById('progress-bar');
+    const downloadStatus = document.getElementById('download-status');
+    const manualDownload = document.getElementById('manual-download');
+    const bookInfo = document.getElementById('book-info');
+
+    if (bookId && bookDownloads[bookId]) {
+      const book = bookDownloads[bookId];
+
+      // Show book info
+      document.getElementById('book-title-display').textContent = book.title;
+      document.getElementById('book-author-display').textContent = '✍️ ' + book.author;
+      document.getElementById('book-thumb').src = book.cover;
+      document.getElementById('book-thumb').alt = book.title;
+      bookInfo.style.display = 'block';
+
+      messageEl.textContent = `"${book.title}" ডাউনলোড শুরু হচ্ছে...`;
+
+      // Animate progress bar
+      setTimeout(() => {
+        progressBar.style.width = '100%';
+      }, 300);
+
+      // Auto-download after 2.5 seconds
+      setTimeout(() => {
+        downloadStatus.textContent = '✅ ডাউনলোড শুরু হয়েছে!';
+        downloadStatus.style.color = '#00d4aa';
+
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = book.file;
+        link.download = book.title + '.pdf';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Show manual download button as fallback
+        manualDownload.href = book.file;
+        manualDownload.setAttribute('download', book.title + '.pdf');
+        manualDownload.style.display = 'inline-flex';
+
+        messageEl.textContent = `🎉 "${book.title}" সফলভাবে ডাউনলোড হচ্ছে!`;
+      }, 2500);
+
+    } else {
+      // No book ID or invalid
+      messageEl.textContent = 'ধন্যবাদ! আপনার অর্ডার গ্রহণ করা হয়েছে।';
+      downloadStatus.textContent = 'বইয়ের তথ্য পাওয়া যায়নি। অনুগ্রহ করে যোগাযোগ করুন।';
+      downloadStatus.style.color = '#ff6b6b';
+      progressBar.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

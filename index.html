@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JINBOOK — বাংলা ই-বুক স্টোর | ডা. মো. জহিরুল ইসলাম</title>
+  <meta name="description" content="JINBOOK — বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। ডা. মো. জহিরুল ইসলামের লেখা স্বাস্থ্য, পুষ্টি ও জীবনযাপন বিষয়ক ই-বুক সংগ্রহ করুন।" />
+  <meta name="keywords" content="ই-বুক, বাংলা বই, স্বাস্থ্য বই, JINBOOK, ডিজিটাল বই, বাংলাদেশ" />
+  <meta name="author" content="ডা. মো. জহিরুল ইসলাম" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JINBOOK — বাংলা ই-বুক স্টোর" />
+  <meta property="og:description" content="বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক সংগ্রহ। সহজে ডাউনলোড করুন।" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jinbook.github.io/" />
+  <link rel="canonical" href="https://jinbook.github.io/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📚</text></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Animated Orbs -->
+  <div class="bg-particles" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <img src="images/logo.png" alt="DP Digital Products" class="logo-img" />
+        JINBOOK
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">হোম</a>
+        <a href="#books">বই সমূহ</a>
+        <a href="#features">কেন JINBOOK?</a>
+        <a href="#about">লেখক পরিচিতি</a>
+        <a href="#contact">যোগাযোগ</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="মেনু খুলুন">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        নতুন বই প্রকাশিত হয়েছে
+      </div>
+
+      <h1>
+        আপনার স্বাস্থ্যের<br/>
+        <span class="gradient-text">সঠিক গাইড</span><br/>
+        এখন হাতের মুঠোয়
+      </h1>
+
+      <p>ডা. মো. জহিরুল ইসলামের লেখা বিজ্ঞানভিত্তিক স্বাস্থ্য ই-বুক সংগ্রহ করুন। সহজ ভাষায়, নির্ভরযোগ্য তথ্যে পরিপূর্ণ।</p>
+
+      <div class="hero-buttons">
+        <a href="#books" class="btn btn-primary" id="hero-browse-btn">
+          📚 বই দেখুন
+        </a>
+        <a href="#about" class="btn btn-outline" id="hero-about-btn">
+          ✍️ লেখক সম্পর্কে
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number" id="stat-books">৩</div>
+          <div class="stat-label">প্রকাশিত বই</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="stat-readers">১০০০+</div>
+          <div class="stat-label">পাঠক</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" id="stat-rating">৪.৯</div>
+          <div class="stat-label">রেটিং ⭐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOKS SECTION ============ -->
+  <section class="section" id="books">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <h2>আমাদের <span class="gradient-text">বই সমূহ</span></h2>
+        <p>বিজ্ঞানভিত্তিক গবেষণা ও অভিজ্ঞতার আলোকে রচিত স্বাস্থ্য গাইড</p>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- Search -->
+      <div class="search-container scroll-animate">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="বই খুঁজুন..." />
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-bar scroll-animate" id="filterBar">
+        <!-- Filter buttons will be injected by JS -->
+      </div>
+
+      <!-- Books Grid -->
+      <div class="books-grid" id="booksGrid">
+        <!-- Book cards will be injected by JS -->
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <div class="emoji">🔍</div>
+        <h3>কোনো বই পাওয়া যায়নি</h3>
+        <p>অন্য কিছু দিয়ে খুঁজে দেখুন</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES SECTION ============ -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <h2>কেন <span class="gradient-text">JINBOOK?</span></h2>
+        <p>আমরা পাঠকদের জন্য সেরা অভিজ্ঞতা নিশ্চিত করি</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card scroll-animate">
+          <div class="feature-icon">📖</div>
+          <h3>বিজ্ঞানভিত্তিক তথ্য</h3>
+          <p>প্রতিটি বই গবেষণা ও প্রমাণভিত্তিক তথ্য দিয়ে সমৃদ্ধ</p>
+        </div>
+        <div class="feature-card scroll-animate">
+          <div class="feature-icon">💳</div>
+          <h3>সহজ পেমেন্ট</h3>
+          <p>বিকাশ, নগদ ও রকেটের মাধ্যমে ZiniPay দিয়ে নিরাপদ পেমেন্ট</p>
+        </div>
+        <div class="feature-card scroll-animate">
+          <div class="feature-icon">📱</div>
+          <h3>যেকোনো ডিভাইসে</h3>
+          <p>মোবাইল, ট্যাবলেট বা কম্পিউটার — যেকোনো ডিভাইসে পড়ুন</p>
+        </div>
+        <div class="feature-card scroll-animate">
+          <div class="feature-icon">⚡</div>
+          <h3>তাৎক্ষণিক ডেলিভারি</h3>
+          <p>পেমেন্ট সম্পন্ন হলে সাথে সাথেই ই-বুক পেয়ে যাবেন</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / AUTHOR SECTION ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image scroll-animate">
+          <div class="about-image-wrapper" id="about-image-wrapper">
+            <!-- ★ আপনার হাই-রেজ ছবি images/author.jpg নামে রাখুন ★ -->
+            <img src="images/author.jpg" alt="ডা. মো. জহিরুল ইসলাম" onerror="this.style.display='none'; this.parentElement.querySelector('.author-placeholder').style.display='flex';" />
+            <div class="author-placeholder" style="display:none; aspect-ratio:3/4; background:linear-gradient(135deg, #7c5cfc22, #00d4aa22); align-items:center; justify-content:center; flex-direction:column; gap:12px; font-size:5rem;">
+              👨‍⚕️
+              <span style="font-size:0.9rem; color:rgba(240,240,248,0.4);">ছবি শীঘ্রই আসছে</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content scroll-animate">
+          <h2>লেখক <span class="gradient-text">পরিচিতি</span></h2>
+          <p>
+            <strong>ডা. মো. জহিরুল ইসলাম</strong> — জন্ম ১৯ জুন, ঢাকায়। 
+            ছোটবেলায় ছবি আঁকা, বিজ্ঞানের প্রজেক্ট বানানোর মতো নানা নেশার পেছনে ছুটে 
+            অবশেষে থিতু লেখালেখিতে। ছোটগল্প, উপন্যাস এবং ছড়ায় স্বচ্ছন্দ হলেও ছড়া 
+            লিখতে ভালবাসেন। দেড় যুগেরও বেশি যুক্ত ছিলেন ক্রীড়া লেখালেখিতে। 
+            সম্পাদনা করেছেন একাধিক ম্যাগাজিন।
+          </p>
+          <p>
+            ইতোমধ্যে পাঁচটি বই ও দুটি ই-বুক প্রকাশিত হয়েছে। 
+            বাংলা একাডেমি লেখক অভিধানভুক্ত লেখক হিসেবে রয়েছেন।
+            পেশায় চিকিৎসক। ব্যক্তিজীবনে বিবাহিত এবং এক কন্যার জনক। 
+            প্রায় দুই দশক ধরে যুক্ত রয়েছেন শিক্ষকতায়।
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="icon">🏥</span>
+              <span>জাতীয় ক্যান্সার গবেষণা ইনস্টিটিউটে কর্মরত</span>
+            </div>
+            <div class="highlight-item">
+              <span class="icon">📚</span>
+              <span>৫টি বই ও ২টি ই-বুক প্রকাশিত</span>
+            </div>
+            <div class="highlight-item">
+              <span class="icon">🎓</span>
+              <span>দুই দশকের শিক্ষকতার অভিজ্ঞতা</span>
+            </div>
+            <div class="highlight-item">
+              <span class="icon">✍️</span>
+              <span>বাংলা একাডেমি অভিধানভুক্ত লেখক</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header scroll-animate">
+        <h2><span class="gradient-text">যোগাযোগ</span> করুন</h2>
+        <p>আমাদের সাথে যোগাযোগ করুন — আমরা সবসময় আপনার পাশে</p>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info scroll-animate">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <h4>ইমেইল</h4>
+              <p>johirulislamnadeem@yahoo.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <h4>ফোন</h4>
+              <p>+৮৮০ ১XXXXXXXXX</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h4>ঠিকানা</h4>
+              <p>বাংলাদেশ</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div class="contact-text">
+              <h4>WhatsApp / Messenger</h4>
+              <p>সরাসরি মেসেজ করুন</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/johirul.nadeem" target="_blank" rel="noopener" class="social-link" aria-label="Facebook" id="social-fb">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.johirulislamnadeem.com" target="_blank" rel="noopener" class="social-link" aria-label="ওয়েবসাইট" id="social-web">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+            <a href="mailto:johirulislamnadeem@yahoo.com" class="social-link" aria-label="ইমেইল" id="social-email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form scroll-animate" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">আপনার নাম</label>
+            <input type="text" id="contactName" placeholder="নাম লিখুন" required />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">ইমেইল</label>
+            <input type="email" id="contactEmail" placeholder="email@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">মোবাইল নম্বর</label>
+            <input type="tel" id="contactPhone" placeholder="০১XXXXXXXXX" />
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">বার্তা</label>
+            <textarea id="contactMessage" placeholder="আপনার বার্তা লিখুন..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="contactSubmitBtn" style="width: 100%; justify-content: center;">
+            ✉️ পাঠিয়ে দিন
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <img src="images/logo.png" alt="DP Digital Products" class="logo-img" />
+          JINBOOK
+        </a>
+        <p>বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। বিজ্ঞানভিত্তিক তথ্যে সমৃদ্ধ, সহজ ভাষায় লেখা।</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>দ্রুত লিংক</h4>
+        <a href="#home">হোম</a>
+        <a href="#books">বই সমূহ</a>
+        <a href="#about">লেখক পরিচিতি</a>
+        <a href="#contact">যোগাযোগ</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>সহায়তা</h4>
+        <a href="#contact">সাধারণ জিজ্ঞাসা</a>
+        <a href="#contact">রিফান্ড পলিসি</a>
+        <a href="#contact">গোপনীয়তা নীতি</a>
+        <a href="#contact">শর্তাবলী</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; ২০২৪-২০২৬ JINBOOK — ডা. মো. জহিরুল ইসলাম। সমস্ত অধিকার সংরক্ষিত। <span class="heart">❤️</span></p>
+    </div>
+  </footer>
+
+  <!-- ============ BOOK DETAIL MODAL ============ -->
+  <div class="modal-overlay" id="bookModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="বন্ধ করুন">✕</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Modal content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
