@@ -699,4 +699,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Navbar initial state
   handleNavScroll();
+
+  // Auto-open modal from URL ?book=ID
+  const urlParams = new URLSearchParams(window.location.search);
+  const bookId = urlParams.get('book');
+  if (bookId && books.find(b => b.id === parseInt(bookId))) {
+    openModal(parseInt(bookId));
+  }
 });
