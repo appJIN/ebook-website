@@ -1,0 +1,12 @@
+﻿# JINBOOK — robots.txt
+# https://appjin.github.io/ebook-website/
+
+User-agent: *
+Allow: /
+
+# Thank you page — index করবেন না
+Disallow: /thankyou.html
+Disallow: /downloads/
+
+# Sitemap
+Sitemap: https://appjin.github.io/ebook-website/sitemap.xml

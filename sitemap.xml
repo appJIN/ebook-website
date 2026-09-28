@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- হোম পেজ -->
+  <url>
+    <loc>https://appjin.github.io/ebook-website/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://appjin.github.io/ebook-website/" />
+  </url>
+
+  <!-- বই সমূহ সেকশন -->
+  <url>
+    <loc>https://appjin.github.io/ebook-website/#books</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- লেখক পরিচিতি সেকশন -->
+  <url>
+    <loc>https://appjin.github.io/ebook-website/#about</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- যোগাযোগ সেকশন -->
+  <url>
+    <loc>https://appjin.github.io/ebook-website/#contact</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
