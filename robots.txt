@@ -1,12 +1,16 @@
-﻿# JINBOOK — robots.txt
+# JINBOOK — robots.txt
 # https://appjin.github.io/ebook-website/
+# Last updated: 2026-09-29
 
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /style.css
+Allow: /script.js
 
-# Thank you page — index করবেন না
+# Private download & post-checkout pages (no index)
 Disallow: /thankyou.html
 Disallow: /downloads/
 
-# Sitemap
+# XML Sitemap
 Sitemap: https://appjin.github.io/ebook-website/sitemap.xml

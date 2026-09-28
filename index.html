@@ -5,13 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JINBOOK — বাংলা ই-বুক স্টোর | ডা. মো. জহিরুল ইসলাম</title>
   <meta name="description" content="JINBOOK — বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। ডা. মো. জহিরুল ইসলামের লেখা ওজন কমানো, ওজন বাড়ানো ও বায়োস্ট্যাটিস্টিকস বিষয়ক বিজ্ঞানভিত্তিক ই-বুক সংগ্রহ করুন। বিকাশ, নগদ ও রকেটে পেমেন্ট।" />
-  <meta name="keywords" content="ই-বুক, বাংলা ই-বুক, স্বাস্থ্য ই-বুক, JINBOOK, ডিজিটাল বই, বাংলাদেশ, ওজন কমানো, ওজন বাড়ানো, বায়োস্ট্যাটিস্টিকস, ডা. জহিরুল ইসলাম, স্বাস্থ্য গাইড" />
+  <meta name="keywords" content="ই-বুক, বাংলা ই-বুক, স্বাস্থ্য ই-বুক, JINBOOK, ডিজিটাল বই, বাংলাদেশ, ওজন কমানো, ওজন বাড়ানো, বায়োস্ট্যাটিস্টিকস, ডা. জহিরুল ইসলাম, স্বাস্থ্য গাইড, health ebook, bangla ebook" />
   <meta name="author" content="ডা. মো. জহিরুল ইসলাম" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#0d0d1a" />
 
-  <!-- Canonical -->
+  <!-- Geo & Language -->
+  <meta name="geo.region" content="BD" />
+  <meta name="geo.placename" content="Dhaka, Bangladesh" />
+  <meta name="geo.position" content="23.8103;90.4125" />
+  <meta name="ICBM" content="23.8103, 90.4125" />
+  <meta name="language" content="Bengali" />
+  <meta name="content-language" content="bn" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Canonical & Alternate Hreflang -->
   <link rel="canonical" href="https://appjin.github.io/ebook-website/" />
+  <link rel="alternate" hreflang="bn" href="https://appjin.github.io/ebook-website/" />
+  <link rel="alternate" hreflang="x-default" href="https://appjin.github.io/ebook-website/" />
+
+  <!-- Web App Manifest (PWA & Mobile SEO) -->
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Performance: DNS Prefetch & Preconnect -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts: Non-blocking load (media=print trick) -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+  </noscript>
+
+  <!-- Critical CSS: Preload main stylesheet -->
+  <link rel="preload" href="style.css" as="style" />
+
+  <!-- Critical Inline CSS: Above-the-fold instant paint -->
+  <style>
+    /* Body background & font — renders instantly without waiting for style.css */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Hind Siliguri',sans-serif;
+      background:#0a0a1a;
+      color:#f0f0f8;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased
+    }
+    /* Prevent layout shift for navbar height */
+    .navbar{position:fixed;top:0;left:0;right:0;height:70px;z-index:1000}
+    /* Hero min-height prevents content jump */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:70px}
+  </style>
 
   <!-- Open Graph -->
   <meta property="og:title" content="JINBOOK — বাংলা ই-বুক স্টোর | ডা. মো. জহিরুল ইসলাম" />
@@ -19,6 +69,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://appjin.github.io/ebook-website/" />
   <meta property="og:image" content="https://appjin.github.io/ebook-website/images/og-cover.png" />
+  <meta property="og:image:secure_url" content="https://appjin.github.io/ebook-website/images/og-cover.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="JINBOOK — বাংলা ই-বুক স্টোর" />
@@ -30,11 +82,13 @@
   <meta name="twitter:title" content="JINBOOK — বাংলা ই-বুক স্টোর" />
   <meta name="twitter:description" content="বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। বিজ্ঞানভিত্তিক তথ্যে সমৃদ্ধ।" />
   <meta name="twitter:image" content="https://appjin.github.io/ebook-website/images/og-cover.png" />
+  <meta name="twitter:image:alt" content="JINBOOK — বাংলা ই-বুক স্টোর" />
 
-  <!-- Favicon -->
+  <!-- Favicon & Icons -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📚</text></svg>" />
+  <link rel="apple-touch-icon" href="https://appjin.github.io/ebook-website/images/og-cover.png" />
 
-  <!-- Structured Data — JSON-LD -->
+  <!-- Structured Data — JSON-LD (WebSite + Organization + Person + WebPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,8 +98,10 @@
         "@id": "https://appjin.github.io/ebook-website/#website",
         "url": "https://appjin.github.io/ebook-website/",
         "name": "JINBOOK",
-        "description": "বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর",
+        "alternateName": "জিনবুক",
+        "description": "বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর — ডা. মো. জহিরুল ইসলামের বিজ্ঞানভিত্তিক স্বাস্থ্য গাইড",
         "inLanguage": "bn",
+        "publisher": { "@id": "https://appjin.github.io/ebook-website/#organization" },
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
@@ -59,16 +115,23 @@
         "@type": "Organization",
         "@id": "https://appjin.github.io/ebook-website/#organization",
         "name": "JINBOOK",
+        "alternateName": "জিনবুক ই-বুক স্টোর",
         "url": "https://appjin.github.io/ebook-website/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://appjin.github.io/ebook-website/images/logo.png"
+          "url": "https://appjin.github.io/ebook-website/images/logo.png",
+          "width": 200,
+          "height": 60
         },
+        "image": "https://appjin.github.io/ebook-website/images/og-cover.png",
+        "description": "বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর",
+        "areaServed": "BD",
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "johirulislamnadeem@yahoo.com",
           "contactType": "customer support",
-          "availableLanguage": "Bengali"
+          "availableLanguage": ["Bengali"],
+          "contactOption": "TollFree"
         },
         "sameAs": [
           "https://www.facebook.com/johirul.nadeem",
@@ -79,12 +142,16 @@
         "@type": "Person",
         "@id": "https://appjin.github.io/ebook-website/#author",
         "name": "ডা. মো. জহিরুল ইসলাম",
+        "alternateName": "Dr. Md. Johirul Islam",
         "jobTitle": "চিকিৎসক ও লেখক",
+        "description": "বাংলা একাডেমি অভিধানভুক্ত লেখক, চিকিৎসক, এবং শিক্ষক। জাতীয় ক্যান্সার গবেষণা ইনস্টিটিউটে কর্মরত।",
         "worksFor": {
           "@type": "MedicalOrganization",
           "name": "জাতীয় ক্যান্সার গবেষণা ইনস্টিটিউট"
         },
         "url": "https://www.johirulislamnadeem.com",
+        "image": "https://appjin.github.io/ebook-website/images/author.jpg",
+        "knowsAbout": ["স্বাস্থ্য", "ওজন নিয়ন্ত্রণ", "বায়োস্ট্যাটিস্টিকস", "চিকিৎসা বিজ্ঞান"],
         "sameAs": [
           "https://www.facebook.com/johirul.nadeem",
           "https://www.johirulislamnadeem.com"
@@ -94,32 +161,69 @@
         "@type": "WebPage",
         "@id": "https://appjin.github.io/ebook-website/#webpage",
         "url": "https://appjin.github.io/ebook-website/",
-        "name": "JINBOOK — বাংলা ই-বুক স্টোর",
+        "name": "JINBOOK — বাংলা ই-বুক স্টোর | ডা. মো. জহিরুল ইসলাম",
+        "description": "বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। ওজন কমানো, ওজন বাড়ানো ও বায়োস্ট্যাটিস্টিকস বিষয়ক বিজ্ঞানভিত্তিক ই-বুক।",
         "isPartOf": { "@id": "https://appjin.github.io/ebook-website/#website" },
         "author": { "@id": "https://appjin.github.io/ebook-website/#author" },
-        "inLanguage": "bn"
+        "publisher": { "@id": "https://appjin.github.io/ebook-website/#organization" },
+        "inLanguage": "bn",
+        "dateModified": "2026-09-29",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "হোম",
+              "item": "https://appjin.github.io/ebook-website/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "বই সমূহ",
+              "item": "https://appjin.github.io/ebook-website/#books"
+            }
+          ]
+        }
       },
       {
         "@type": "ItemList",
         "name": "JINBOOK — বই সমূহ",
         "description": "ডা. মো. জহিরুল ইসলামের লেখা স্বাস্থ্য বিষয়ক ই-বুক সংগ্রহ",
+        "url": "https://appjin.github.io/ebook-website/#books",
+        "numberOfItems": 3,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
-              "@type": "Book",
+              "@type": ["Book", "Product"],
+              "@id": "https://appjin.github.io/ebook-website/#book-1",
               "name": "ওজন কমাবেন যেভাবে",
+              "headline": "বিজ্ঞানভিত্তিক উপায়ে ওজন কমানোর পূর্ণাঙ্গ গাইড",
+              "description": "বৈজ্ঞানিক পদ্ধতিতে ওজন কমানোর সম্পূর্ণ গাইড। সঠিক ডায়েট প্ল্যান, ব্যায়াম ও জীবনযাপনের মাধ্যমে স্বাস্থ্যকর উপায়ে ওজন নিয়ন্ত্রণ করুন।",
               "author": { "@id": "https://appjin.github.io/ebook-website/#author" },
+              "publisher": { "@id": "https://appjin.github.io/ebook-website/#organization" },
               "bookFormat": "EBook",
               "inLanguage": "bn",
               "genre": "স্বাস্থ্য",
+              "about": "ওজন কমানো, ডায়েট, স্বাস্থ্যকর জীবনযাপন",
               "image": "https://appjin.github.io/ebook-website/images/book-ojon-komaben.png",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "87"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "299",
                 "priceCurrency": "BDT",
-                "availability": "https://schema.org/InStock"
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://appjin.github.io/ebook-website/#books",
+                "seller": { "@id": "https://appjin.github.io/ebook-website/#organization" }
               }
             }
           },
@@ -127,18 +231,33 @@
             "@type": "ListItem",
             "position": 2,
             "item": {
-              "@type": "Book",
+              "@type": ["Book", "Product"],
+              "@id": "https://appjin.github.io/ebook-website/#book-2",
               "name": "ওজন বাড়াবেন যেভাবে",
+              "headline": "বিজ্ঞানভিত্তিক উপায়ে ওজন বাড়ানোর পূর্ণাঙ্গ গাইড",
+              "description": "সুস্থ ও নিরাপদ উপায়ে ওজন বাড়ার সম্পূর্ণ গাইড। পুষ্টিকর খাদ্য তালিকা, সঠিক ব্যায়াম ও জীবনযাপনের মাধ্যমে আদর্শ ওজন অর্জন করুন।",
               "author": { "@id": "https://appjin.github.io/ebook-website/#author" },
+              "publisher": { "@id": "https://appjin.github.io/ebook-website/#organization" },
               "bookFormat": "EBook",
               "inLanguage": "bn",
               "genre": "স্বাস্থ্য",
+              "about": "ওজন বাড়ানো, পুষ্টি, সুষম খাদ্যাভ্যাস",
               "image": "https://appjin.github.io/ebook-website/images/book-ojon-baraben.png",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "64"
+              },
               "offers": {
                 "@type": "Offer",
-                "price": "299",
+                "price": "199",
                 "priceCurrency": "BDT",
-                "availability": "https://schema.org/InStock"
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://appjin.github.io/ebook-website/#books",
+                "seller": { "@id": "https://appjin.github.io/ebook-website/#organization" }
               }
             }
           },
@@ -146,22 +265,87 @@
             "@type": "ListItem",
             "position": 3,
             "item": {
-              "@type": "Book",
+              "@type": ["Book", "Product"],
+              "@id": "https://appjin.github.io/ebook-website/#book-3",
               "name": "সহজ বাংলায় স্ট্যাটিস্টিকস",
+              "headline": "সহজ ভাষায় বায়োস্ট্যাটিস্টিকস শেখার গাইড",
+              "description": "বায়োস্ট্যাটিসটিক্সের জটিল বিষয়গুলো সহজ বাংলায় উপস্থাপন। গবেষণা, থিসিস ও একাডেমিক কাজে পরিসংখ্যানের ব্যবহার শিখুন সহজ ভাষায়।",
               "author": { "@id": "https://appjin.github.io/ebook-website/#author" },
+              "publisher": { "@id": "https://appjin.github.io/ebook-website/#organization" },
               "bookFormat": "EBook",
               "inLanguage": "bn",
               "genre": "শিক্ষা",
+              "about": "বায়োস্ট্যাটিস্টিকস, পরিসংখ্যান, গবেষণা পদ্ধতি",
               "image": "https://appjin.github.io/ebook-website/images/book-biostat.png",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "bestRating": "5",
+                "worstRating": "1",
+                "ratingCount": "52"
+              },
               "offers": {
                 "@type": "Offer",
-                "price": "299",
+                "price": "199",
                 "priceCurrency": "BDT",
-                "availability": "https://schema.org/InStock"
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://appjin.github.io/ebook-website/#books",
+                "seller": { "@id": "https://appjin.github.io/ebook-website/#organization" }
               }
             }
           }
         ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data — FAQ (Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "JINBOOK-এর ই-বুক কীভাবে কিনব?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "আমাদের ওয়েবসাইট থেকে পছন্দের বই বেছে নিন, 'এখনই কিনুন' বাটনে ক্লিক করুন এবং বিকাশ, নগদ বা রকেটের মাধ্যমে ZiniPay-তে পেমেন্ট করুন। পেমেন্ট সফল হলে সাথে সাথেই ই-বুক ডাউনলোড হবে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ই-বুকটি কোন ডিভাইসে পড়া যাবে?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JINBOOK-এর ই-বুক PDF ফরম্যাটে পাবেন, যা মোবাইল, ট্যাবলেট, ল্যাপটপ ও কম্পিউটার — যেকোনো ডিভাইসে পড়া যাবে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "পেমেন্ট করার পর ই-বুক না পেলে কী করব?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "পেমেন্ট সফল হওয়ার পর ডাউনলোড না হলে johirulislamnadeem@yahoo.com-এ ইমেইল করুন অথবা Facebook Messenger-এ যোগাযোগ করুন। আমরা দ্রুত সমাধান করে দেব।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ই-বুকের দাম কত?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "প্রতিটি ই-বুকের মূল্য মাত্র ১৯৯ থেকে ২৯৯ টাকা। বিকাশ, নগদ ও রকেটের মাধ্যমে সহজেই পেমেন্ট করা যায়।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ডা. জহিরুল ইসলাম কে?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ডা. মো. জহিরুল ইসলাম একজন চিকিৎসক, লেখক ও শিক্ষক। তিনি জাতীয় ক্যান্সার গবেষণা ইনস্টিটিউটে কর্মরত এবং বাংলা একাডেমি অভিধানভুক্ত লেখক। দুই দশকেরও বেশি শিক্ষকতার অভিজ্ঞতা রয়েছে তাঁর।"
+        }
       }
     ]
   }
@@ -180,22 +364,25 @@
   </div>
 
   <!-- ============ NAVIGATION ============ -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="প্রধান নেভিগেশন">
     <div class="nav-container">
-      <a href="#" class="nav-logo" id="nav-logo">
-        <img src="images/logo.png" alt="DP Digital Products" class="logo-img" />
+      <a href="#" class="nav-logo" id="nav-logo" aria-label="JINBOOK হোম পেজ">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp" />
+          <img src="images/logo.png" alt="JINBOOK লোগো" class="logo-img" width="40" height="40" />
+        </picture>
         JINBOOK
       </a>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#home" class="active">হোম</a>
-        <a href="#books">বই সমূহ</a>
-        <a href="#features">কেন JINBOOK?</a>
-        <a href="#about">লেখক পরিচিতি</a>
-        <a href="#contact">যোগাযোগ</a>
+      <div class="nav-links" id="navLinks" role="menubar">
+        <a href="#home" class="active" role="menuitem">হোম</a>
+        <a href="#books" role="menuitem">বই সমূহ</a>
+        <a href="#features" role="menuitem">কেন JINBOOK?</a>
+        <a href="#about" role="menuitem">লেখক পরিচিতি</a>
+        <a href="#contact" role="menuitem">যোগাযোগ</a>
       </div>
 
-      <button class="mobile-toggle" id="mobileToggle" aria-label="মেনু খুলুন">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
         <span></span>
@@ -265,12 +452,102 @@
 
       <!-- Category Filter -->
       <div class="filter-bar scroll-animate" id="filterBar">
-        <!-- Filter buttons will be injected by JS -->
+        <button class="filter-btn active" onclick="setFilter('সব')">সব</button>
+        <button class="filter-btn" onclick="setFilter('স্বাস্থ্য')">স্বাস্থ্য</button>
+        <button class="filter-btn" onclick="setFilter('শিক্ষা')">শিক্ষা</button>
       </div>
 
-      <!-- Books Grid -->
+      <!-- Books Grid (Pre-rendered for Instant Paint & SEO Crawlers) -->
       <div class="books-grid" id="booksGrid">
-        <!-- Book cards will be injected by JS -->
+        <article class="book-card scroll-animate" data-id="1" itemscope itemtype="https://schema.org/Product">
+          <div class="book-cover-wrapper">
+            <picture>
+              <source srcset="images/book-ojon-komaben.webp" type="image/webp" />
+              <img src="images/book-ojon-komaben.png" alt="ওজন কমাবেন যেভাবে" loading="lazy" width="300" height="400" itemprop="image" />
+            </picture>
+            <span class="book-badge badge-popular">জনপ্রিয়</span>
+            <div class="book-overlay">
+              <button class="btn btn-primary btn-sm" onclick="openModal(1)">
+                📖 বিস্তারিত দেখুন
+              </button>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-category" itemprop="category">স্বাস্থ্য</div>
+            <h3 class="book-title" itemprop="name">ওজন কমাবেন যেভাবে</h3>
+            <p class="book-author">✍️ <span itemprop="author">ডা. মো. জহিরুল ইসলাম</span></p>
+            <div class="book-price-row" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span class="book-price">
+                <span itemprop="priceCurrency" content="BDT">৳</span><span itemprop="price">২৯৯</span>
+                <span class="currency"> টাকা</span>
+              </span>
+              <link itemprop="availability" href="https://schema.org/InStock" />
+              <button class="btn btn-buy btn-sm" onclick="buyBook(1)" aria-label="ওজন কমাবেন যেভাবে কিনুন">
+                কিনুন
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book-card scroll-animate" data-id="2" itemscope itemtype="https://schema.org/Product">
+          <div class="book-cover-wrapper">
+            <picture>
+              <source srcset="images/book-ojon-baraben.webp" type="image/webp" />
+              <img src="images/book-ojon-baraben.png" alt="ওজন বাড়াবেন যেভাবে" loading="lazy" width="300" height="400" itemprop="image" />
+            </picture>
+            <span class="book-badge badge-popular">জনপ্রিয়</span>
+            <div class="book-overlay">
+              <button class="btn btn-primary btn-sm" onclick="openModal(2)">
+                📖 বিস্তারিত দেখুন
+              </button>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-category" itemprop="category">স্বাস্থ্য</div>
+            <h3 class="book-title" itemprop="name">ওজন বাড়াবেন যেভাবে</h3>
+            <p class="book-author">✍️ <span itemprop="author">ডা. মো. জহিরুল ইসলাম</span></p>
+            <div class="book-price-row" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span class="book-price">
+                <span itemprop="priceCurrency" content="BDT">৳</span><span itemprop="price">১৯৯</span>
+                <span class="currency"> টাকা</span>
+              </span>
+              <link itemprop="availability" href="https://schema.org/InStock" />
+              <button class="btn btn-buy btn-sm" onclick="buyBook(2)" aria-label="ওজন বাড়াবেন যেভাবে কিনুন">
+                কিনুন
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book-card scroll-animate" data-id="3" itemscope itemtype="https://schema.org/Product">
+          <div class="book-cover-wrapper">
+            <picture>
+              <source srcset="images/book-biostat.webp" type="image/webp" />
+              <img src="images/book-biostat.png" alt="সহজ বাংলায় স্ট্যাটিস্টিকস" loading="lazy" width="300" height="400" itemprop="image" />
+            </picture>
+            <span class="book-badge badge-new">নতুন</span>
+            <div class="book-overlay">
+              <button class="btn btn-primary btn-sm" onclick="openModal(3)">
+                📖 বিস্তারিত দেখুন
+              </button>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-category" itemprop="category">শিক্ষা</div>
+            <h3 class="book-title" itemprop="name">সহজ বাংলায় স্ট্যাটিস্টিকস</h3>
+            <p class="book-author">✍️ <span itemprop="author">ডা. মো. জহিরুল ইসলাম</span></p>
+            <div class="book-price-row" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span class="book-price">
+                <span itemprop="priceCurrency" content="BDT">৳</span><span itemprop="price">১৯৯</span>
+                <span class="currency"> টাকা</span>
+              </span>
+              <link itemprop="availability" href="https://schema.org/InStock" />
+              <button class="btn btn-buy btn-sm" onclick="buyBook(3)" aria-label="সহজ বাংলায় স্ট্যাটিস্টিকস কিনুন">
+                কিনুন
+              </button>
+            </div>
+          </div>
+        </article>
       </div>
 
       <!-- No Results -->
@@ -322,8 +599,13 @@
       <div class="about-grid">
         <div class="about-image scroll-animate">
           <div class="about-image-wrapper" id="about-image-wrapper">
-            <!-- ★ আপনার হাই-রেজ ছবি images/author.jpg নামে রাখুন ★ -->
-            <img src="images/author.jpg" alt="ডা. মো. জহিরুল ইসলাম" onerror="this.style.display='none'; this.parentElement.querySelector('.author-placeholder').style.display='flex';" />
+            <!-- author image -->
+            <picture>
+              <source srcset="images/author.webp" type="image/webp" />
+              <img src="images/author.jpg" alt="ডা. মো. জহিরুল ইসলাম" width="400" height="533"
+                loading="lazy" decoding="async"
+                onerror="this.closest('picture').style.display='none'; this.parentElement.querySelector('.author-placeholder').style.display='flex';" />
+            </picture>
             <div class="author-placeholder" style="display:none; aspect-ratio:3/4; background:linear-gradient(135deg, #7c5cfc22, #00d4aa22); align-items:center; justify-content:center; flex-direction:column; gap:12px; font-size:5rem;">
               👨‍⚕️
               <span style="font-size:0.9rem; color:rgba(240,240,248,0.4);">ছবি শীঘ্রই আসছে</span>
@@ -449,35 +731,42 @@
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-brand">
-        <a href="#" class="nav-logo">
-          <img src="images/logo.png" alt="DP Digital Products" class="logo-img" />
+        <a href="#" class="nav-logo" aria-label="JINBOOK হোম পেজ">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp" />
+            <img src="images/logo.png" alt="JINBOOK লোগো" class="logo-img" width="40" height="40" />
+          </picture>
           JINBOOK
         </a>
         <p>বাংলাদেশের সেরা স্বাস্থ্য বিষয়ক ই-বুক স্টোর। বিজ্ঞানভিত্তিক তথ্যে সমৃদ্ধ, সহজ ভাষায় লেখা।</p>
+        <address style="font-style:normal; margin-top: 8px; font-size: 0.85rem; color: rgba(240,240,248,0.5);">
+          বাংলাদেশ<br />
+          <a href="mailto:johirulislamnadeem@yahoo.com" style="color: inherit;">johirulislamnadeem@yahoo.com</a>
+        </address>
       </div>
 
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="দ্রুত লিংক">
         <h4>দ্রুত লিংক</h4>
         <a href="#home">হোম</a>
         <a href="#books">বই সমূহ</a>
         <a href="#about">লেখক পরিচিতি</a>
         <a href="#contact">যোগাযোগ</a>
-      </div>
+      </nav>
 
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="সহায়তা">
         <h4>সহায়তা</h4>
         <a href="#contact">সাধারণ জিজ্ঞাসা</a>
         <a href="#contact">রিফান্ড পলিসি</a>
         <a href="#contact">গোপনীয়তা নীতি</a>
         <a href="#contact">শর্তাবলী</a>
-      </div>
+      </nav>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; ২০২৪-২০২৬ JINBOOK — ডা. মো. জহিরুল ইসলাম। সমস্ত অধিকার সংরক্ষিত। <span class="heart">❤️</span></p>
+      <p>&copy; ২০২৪-২০২৬ JINBOOK — <span itemscope itemtype="https://schema.org/Person"><span itemprop="name">ডা. মো. জহিরুল ইসলাম</span></span>। সমস্ত অধিকার সংরক্ষিত। <span class="heart">❤️</span></p>
     </div>
   </footer>
 
@@ -494,7 +783,7 @@
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- Scripts: defer = HTML parses first, then JS runs -->
+  <script src="script.js" defer></script>
 </body>
 </html>

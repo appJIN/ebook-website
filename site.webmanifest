@@ -1,0 +1,25 @@
+{
+  "name": "JINBOOK — বাংলা ই-বুক স্টোর",
+  "short_name": "JINBOOK",
+  "description": "ডা. মো. জহিরুল ইসলামের লেখা বিজ্ঞানভিত্তিক স্বাস্থ্য ই-বুক স্টোর।",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#0d0d1a",
+  "lang": "bn",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/og-cover.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

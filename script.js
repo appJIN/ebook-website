@@ -19,7 +19,7 @@ const books = [
     category: "স্বাস্থ্য",
     price: 299,
     oldPrice: null,
-    cover: "images/book-ojon-komaben.png",
+    cover: "images/book-ojon-komaben.webp",
     badge: "popular",
     badgeText: "জনপ্রিয়",
     description: "বৈজ্ঞানিক পদ্ধতিতে ওজন কমানোর সম্পূর্ণ গাইড। সঠিক ডায়েট প্ল্যান, ব্যায়াম ও জীবনযাপনের মাধ্যমে স্বাস্থ্যকর উপায়ে ওজন নিয়ন্ত্রণ করুন।",
@@ -115,7 +115,7 @@ const books = [
     category: "স্বাস্থ্য",
     price: 199,
     oldPrice: null,
-    cover: "images/book-ojon-baraben.png",
+    cover: "images/book-ojon-baraben.webp",
     badge: "popular",
     badgeText: "জনপ্রিয়",
     description: "সুস্থ ও নিরাপদ উপায়ে ওজন বাড়ার সম্পূর্ণ গাইড। পুষ্টিকর খাদ্য তালিকা, সঠিক ব্যায়াম ও জীবনযাপনের মাধ্যমে আদর্শ ওজন অর্জন করুন।",
@@ -222,7 +222,7 @@ const books = [
     category: "শিক্ষা",
     price: 199,
     oldPrice: null,
-    cover: "images/book-biostat.png",
+    cover: "images/book-biostat.webp",
     badge: "new",
     badgeText: "নতুন",
     description: "বায়োস্ট্যাটিসটিক্সের জটিল বিষয়গুলো সহজ বাংলায় উপস্থাপন। গবেষণা, থিসিস ও একাডেমিক কাজে পরিসংখ্যানের ব্যবহার শিখুন সহজ ভাষায়।",
@@ -336,6 +336,35 @@ const toast = document.getElementById('toast');
 let activeFilter = 'সব';
 
 // ============================================
+// ⚡ PERFORMANCE UTILITIES
+// ============================================
+
+/**
+ * throttle — scroll/resize ইভেন্ট এ 60fps সীমার মধ্যে রাখে
+ */
+function throttle(fn, wait = 16) {
+  let last = 0;
+  return function (...args) {
+    const now = performance.now();
+    if (now - last >= wait) {
+      last = now;
+      fn.apply(this, args);
+    }
+  };
+}
+
+/**
+ * debounce — বারবার টাইপ করলে শেষ টাইপ র পর নিদির্ষ্ট সময় অপেক্ষা করে ফাংশন চালায়
+ */
+function debounce(fn, wait = 300) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+// ============================================
 // 📖 RENDER BOOKS
 // ============================================
 function renderBooks(booksToRender) {
@@ -350,7 +379,7 @@ function renderBooks(booksToRender) {
   booksGrid.innerHTML = booksToRender.map((book, index) => `
     <div class="book-card scroll-animate" data-id="${book.id}" style="animation-delay: ${index * 0.1}s">
       <div class="book-cover-wrapper">
-        <img src="${book.cover}" alt="${book.title}" loading="lazy" />
+        <img src="${book.cover}" alt="${book.title}" loading="lazy" width="300" height="400" />
         ${book.badge ? `<span class="book-badge badge-${book.badge}">${book.badgeText}</span>` : ''}
         <div class="book-overlay">
           <button class="btn btn-primary btn-sm" onclick="openModal(${book.id})">
@@ -408,6 +437,8 @@ function getFilteredBooks() {
 function handleSearch() {
   renderBooks(getFilteredBooks());
 }
+// Debounced version — search runs 300ms after user stops typing
+const handleSearchDebounced = debounce(handleSearch, 300);
 
 function renderFilters() {
   const categories = ['সব', ...new Set(books.map(b => b.category))];
@@ -597,8 +628,10 @@ function updateActiveLink() {
 // 📱 MOBILE MENU
 // ============================================
 function toggleMobileMenu() {
+  const isOpen = navLinks.classList.toggle('mobile-open');
   mobileToggle.classList.toggle('active');
-  navLinks.classList.toggle('mobile-open');
+  // Sync aria-expanded for accessibility & SEO
+  mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
 
 function closeMobileMenu() {
@@ -660,14 +693,15 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFilters();
   renderBooks(books);
 
-  // Search
-  searchInput.addEventListener('input', handleSearch);
+  // Search — debounced (300ms delay, no lag)
+  searchInput.addEventListener('input', handleSearchDebounced);
 
-  // Scroll effects
-  window.addEventListener('scroll', () => {
+  // Scroll effects — throttled to 60fps + passive for no jank
+  const throttledScroll = throttle(() => {
     handleNavScroll();
     updateActiveLink();
-  });
+  }, 16);
+  window.addEventListener('scroll', throttledScroll, { passive: true });
 
   // Mobile menu
   mobileToggle.addEventListener('click', toggleMobileMenu);
