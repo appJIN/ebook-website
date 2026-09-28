@@ -645,22 +645,14 @@ function closeMobileMenu() {
 function handleContactSubmit(e) {
   e.preventDefault();
 
-  const name = document.getElementById('contactName').value;
-  const email = document.getElementById('contactEmail').value;
-  const phone = document.getElementById('contactPhone').value;
-  const message = document.getElementById('contactMessage').value;
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
 
-  // WhatsApp message compose
-  const whatsappText = encodeURIComponent(
-    `📧 JINBOOK যোগাযোগ ফর্ম\n\n` +
-    `👤 নাম: ${name}\n` +
-    `📧 ইমেইল: ${email}\n` +
-    `📞 ফোন: ${phone}\n` +
-    `💬 বার্তা: ${message}`
-  );
-
-  // You can change this to your WhatsApp number
-  // window.open(`https://wa.me/880XXXXXXXXXX?text=${whatsappText}`, '_blank');
+  if (!name || !email || !message) {
+    showToast('⚠️ অনুগ্রহ করে সব তথ্য পূরণ করুন।');
+    return;
+  }
 
   showToast('✅ আপনার বার্তা পাঠানো হয়েছে। ধন্যবাদ!');
   contactForm.reset();
